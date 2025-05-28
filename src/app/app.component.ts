@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     this.http.get<any>("/assets/json/formfields.json").subscribe((data: any) => {
       this.formFields = data;
       this.generateFields();
-      console.log(this.formFields, "forms");
     });
   }
 
@@ -47,7 +46,6 @@ export class AppComponent implements OnInit {
       fg[field.controlName] = [field.value || '', validators];
     });
     this.myForm = this.fb.group(fg);
-    console.log("myForm", this.myForm);
   }
 
   validateForm() {
@@ -63,12 +61,8 @@ export class AppComponent implements OnInit {
           break;
         }
       }
-      // fields.forEach(field => {
-        
-      // });
     } else {
       alert('Form Submitted');
-      console.log("Submit Form:", this.myForm.value);
       this.myForm.reset();
     }
   }
