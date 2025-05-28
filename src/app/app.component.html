@@ -1,0 +1,29 @@
+<section class="container">
+    <h2 class="text-center">My Form</h2>
+    <form [formGroup]="myForm">
+        <div *ngFor="let field of formFields.field" class="row mb-3">
+            <div class="col-5">
+                <label class="form-label">{{field.label}}</label>
+            </div>
+            <div class="col-7">
+                <ng-container *ngIf="field.type == 'text' || field.type == 'number'">
+                    <input [type]="field.type" [formControlName]="field.controlName" class="form-control">
+                </ng-container>
+                <ng-container *ngIf="field.type == 'radio'">
+                    <mat-radio-group [formControlName]="field.controlName" class="form-control">
+                        <mat-radio-button *ngFor="let option of field.options" [value]="option.value">{{option.label}}</mat-radio-button>
+                    </mat-radio-group>
+                </ng-container>
+                <ng-container *ngIf="field.type == 'dropdown'">
+                    <select [formControlName]="field.controlName" class="form-control">
+                        <option *ngFor="let option of field.options" [value]=option.value>{{option.label}}</option>
+                    </select>
+                </ng-container>
+            </div>
+        </div>
+    </form>
+    <div class="btnsection text-center">
+        <button *ngFor="let act of formFields.action" type="button" class="btn btn-primary"
+            (click)="formAction(act.action)">{{act.text}}</button>
+    </div>
+</section>

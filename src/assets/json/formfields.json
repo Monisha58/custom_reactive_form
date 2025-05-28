@@ -1,0 +1,91 @@
+{
+    "field": [
+        {
+            "label": "First Name",
+            "controlName": "firstname",
+            "type": "text",
+            "value": "",
+            "validators": [
+                {
+                    "validator": "required",
+                    "message": "Please enter first name"
+                },
+                {
+                    "validator": "minLength",
+                    "message": "Please enter minimum 5 characters",
+                    "minLength": 5
+                }
+            ]
+        },
+        {
+            "label": "Last Name",
+            "controlName": "lastname",
+            "type": "text",
+            "value": "",
+            "validators": [
+                {
+                    "validator": "required",
+                    "message": "Please enter last name"
+                },
+                {
+                    "validator": "minLength",
+                    "message": "Please enter minimum 2 characters",
+                    "minLength": 2
+                }
+            ]
+        },
+        {
+            "label": "Age",
+            "controlName": "age",
+            "type": "number",
+            "value": "",
+            "validators": [
+                {
+                    "validator": "required",
+                    "message": "Please enter Age"
+                }
+            ]
+        },
+        {
+            "label": "Sex",
+            "controlName": "sex",
+            "type": "radio",
+            "value": "",
+            "validators": [
+                {
+                    "validator": "required",
+                    "message": "Please select Sex"
+                }
+            ],
+            "options": [
+                { "label": "Female", "value": "female" },
+                { "label": "Male", "value": "male" },
+                { "label": "Other", "value": "other" }
+            ]
+        },
+        {
+            "label": "Marital Status",
+            "controlName": "maritalstatus",
+            "type": "dropdown",
+            "value": "",
+            "validators": [
+                {
+                    "validator": "required",
+                    "message": "Please select Marital Status"
+                }
+            ],
+            "options": [
+                { "label": "Please select Marital Status", "value": "" },
+                { "label": "Married", "value": "married" },
+                { "label": "Unmarried", "value": "unmarried" },
+                { "label": "Prefer not to say", "value": "confidential" }
+            ]
+        }
+    ],
+    "action": [
+        {
+            "text": "Submit",
+            "action": "submit"
+        }
+    ]
+}
